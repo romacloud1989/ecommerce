@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '5eb9d8cde9cf2a24aede5d35e49ed2ffc593de3d',
     'name' => 'romacloud1989/ecommerce',
   ),
   'versions' => 
@@ -31,12 +31,12 @@
     ),
     'romacloud1989/ecommerce' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '5eb9d8cde9cf2a24aede5d35e49ed2ffc593de3d',
     ),
     'slim/slim' => 
     array (
