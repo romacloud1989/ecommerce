@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '5eb9d8cde9cf2a24aede5d35e49ed2ffc593de3d',
+    'reference' => '0b5e3eb52646918f7ba14f679a9d8faf46ad7f51',
     'name' => 'romacloud1989/ecommerce',
   ),
   'versions' => 
@@ -36,7 +36,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '5eb9d8cde9cf2a24aede5d35e49ed2ffc593de3d',
+      'reference' => '0b5e3eb52646918f7ba14f679a9d8faf46ad7f51',
     ),
     'slim/slim' => 
     array (
