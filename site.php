@@ -72,4 +72,49 @@ $app->get("/cart", function(){
 
 });
 
+$app->get("cart/:idproduct/add", function($idproduct){
+
+  $product = new Product();
+
+  $product->get((int)$idproduct);
+
+  $cart = Cart::getFromSession();
+
+  $cart->addProduct($product);
+
+  header("locarion: /cart");
+  exit;
+
+});
+
+$app->get("cart/:idproduct/minus", function($idproduct){
+
+  $product = new Product();
+
+  $product->get((int)$idproduct);
+
+  $cart = Cart::getFromSession();
+
+  $cart->removeProduct($product);
+
+  header("locarion: /cart");
+  exit;
+
+});
+
+$app->get("cart/:idproduct/remove", function($idproduct){
+
+  $product = new Product();
+
+  $product->get((int)$idproduct);
+
+  $cart = Cart::getFromSession();
+
+  $cart->removeProduct($product, true);
+
+  header("locarion: /cart");
+  exit;
+
+});
+
  ?>
