@@ -68,11 +68,14 @@ $app->get("/cart", function(){
 
   $page = new Page();
 
-  $page->setTpl("cart");
+  $page->setTpl("cart", [
+    'cart'=>$cart->getValues(),
+    'products'=>$cart->getProducts()
+  ]);
 
 });
 
-$app->get("cart/:idproduct/add", function($idproduct){
+$app->get("/cart/:idproduct/add", function($idproduct){
 
   $product = new Product();
 
@@ -80,14 +83,21 @@ $app->get("cart/:idproduct/add", function($idproduct){
 
   $cart = Cart::getFromSession();
 
-  $cart->addProduct($product);
+  $qtd = (isset($_GET['qtd'])) ? (int)$_GET['qtd'] : 1;
 
-  header("locarion: /cart");
+  for ($i = 0; $i < $qtd; $i++) {
+
+    $cart->addProduct($product);
+
+  }  
+
+  header("location: /cart");
+
   exit;
 
 });
 
-$app->get("cart/:idproduct/minus", function($idproduct){
+$app->get("/cart/:idproduct/minus", function($idproduct){
 
   $product = new Product();
 
@@ -97,12 +107,14 @@ $app->get("cart/:idproduct/minus", function($idproduct){
 
   $cart->removeProduct($product);
 
-  header("locarion: /cart");
+  header("location: /cart");
+
   exit;
+
 
 });
 
-$app->get("cart/:idproduct/remove", function($idproduct){
+$app->get("/cart/:idproduct/remove", function($idproduct){
 
   $product = new Product();
 
@@ -112,7 +124,7 @@ $app->get("cart/:idproduct/remove", function($idproduct){
 
   $cart->removeProduct($product, true);
 
-  header("locarion: /cart");
+  header("location: /cart");
   exit;
 
 });
